@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  ryu-controller:
+    build: ./Ryu-Docker/
+    ports: 
+      - "6633:6633"
+    
+    working_dir: "/root/ryu/"
+    tty: true
+    entrypoint: "ryu-manager ./controller_application/qos.py --observe-links"
+    restart: always
+    volumes:
+      - /home/sgsdn/workspace/controller/src:/root/ryu/controller_application
+    network_mode: host
