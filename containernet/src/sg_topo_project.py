@@ -37,7 +37,6 @@ def setQos(ifaces):
 
 
 if __name__ == '__main__':
-    #exec(open("/home/sgsdn/workspace/sflow-rt/extras/sflow.py").read())
     subnet = '10.0.0.0/8'
     net = SGContainernet(controller=RemoteController, ipBase=subnet)
 
